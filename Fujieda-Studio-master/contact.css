@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+a {
+  text-decoration: none;/*テキストの装飾を指定するプロパティ*/
+  color: inherit;/*親要素の継承、文字の青色設定を解除*/
+}
+ul {
+  list-style: none;/*箇条書きの点を消す*/
+}
+
+p {
+  color: inherit;/*青くなるのを解除*/
+}
+
+.contents-wrapper {
+  display: inline-block;
+  width:100%;
+}
+
+.txt-area {
+
+}

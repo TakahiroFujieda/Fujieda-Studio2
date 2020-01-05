@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+a {
+  text-decoration: none;/*テキストの装飾を指定するプロパティ*/
+  color: inherit;/*親要素の継承、文字の青色設定を解除*/
+}
+ul {
+  list-style: none;/*箇条書きの点を消す*/
+}
+
+p {
+  color: inherit;/*青くなるのを解除*/
+}
+
+/*非表示　h1　Common*/
+.visuallyhidden {
+  position:absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+/*Common*/
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+
+/*Common*/
+header {
+  height: 100px;
+  width: 100%;
+  background-color: dimgray;
+  position :fixed;
+  top: 0;
+  z-index: 10;
+}
+.header-left {
+  float: left;
+  color: white;
+  font-family: "HGP行書体";
+  font-size: 36px;
+  padding: 10px 0 0 25px;
+}
+.header-tag {
+  float: left;
+  color: white;
+  font-family: "HGP行書体";
+  font-size: 18px;
+}
+.header-tag li {
+  display: inline-block;
+  padding: 0px 5px
+}
+.menu-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  padding: 20px 20px;
+  display: none;
+}
+.Prodact-tag {
+  float: left;
+  color: white;
+  margin: -10px 0 0 0;
+  font-family: "HGP行書体";
+  font-size: 18px;
+}
+.Prodact-tag li {
+  display: inline-block;
+  padding: 0px 10px
+}
+.sns-tag {
+  float: right;
+  color: white;
+  margin: -10px 15px 0 0;
+  font-family: "HGP行書体";
+  font-size: 18px;
+  text-align: center;
+}
+.sns-tag  li {
+  display: inline-block;
+  padding: 0px 5px
+}
+
+
+/*Common*/
+/*https://saruwakakun.com/html-css/reference/nav-drawer*/
+#nav-drawer {
+  position:relative;
+  display: none;
+}
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display: none;
+}
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height:22px;
+  vertical-align: middle;
+  float: right;
+}
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index:99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 75%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 100%;/*最大幅*/
+  height: 75%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+
+
+main {
+  background-color: lightgray;
+  margin : 0;
+}
+
+.content {
+  padding: 100px 0 0 0 /*main photo position*/
+}
+
+.performance {
+  display: inline-block;
+  width:100%;
+  color: black;
+  margin: -10px 15px 0 0;
+  font-family: "HGP行書体";
+  font-size: 32px;
+  text-align: center;
+  padding: 30px 0 10px 0;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+.unit-content {
+  position: relative;
+  width: 49%;
+  /*text-align: center;*/
+  padding: 2px 2px;
+}
+.font {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  color: white;
+  font-size: 24px;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+h4 {
+  font-size: 24px;
+  margin: 0;
+  padding-top: 5px;
+}
+h5 {
+  font-size: 16px;
+  margin: 0;
+}
+.detail {
+  font-size: 12px;
+  font-family: "Hiragino Kaku Gothic ProN";
+  margin: 0;
+}
+
+
+
+footer {
+  text-align: center;/*有効*/
+  padding-bottom: 20px;
+  background-color: gray
+}
+footer p {
+  text-align:center
+  color: black;
+  font-size: 12px;
+  /*letter-spacing: 10px;/*文字の間隔調整　横方向*/
+  margin: 0 0;
+}
+/*list*/
+.footer_form { /*親要素*/
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+.footer_list { /*子要素*/
+  padding: 0 15px;
+}
+/*お問い合わせ*/
+.footer_Contact {
+  display: inline-block;
+  align-items: center;
+  padding: 25px 0;
+}
+.footer_Contact p {
+  /*font-size: 14px;*/
+  text-align: start;/*左端寄せ*/
+}
+.footer_name {
+  font-family: "HGP行書体";
+  font-size: 32px;
+  padding-bottom: 5px
+}
+.footer_tel {
+  font-family: 'cursive';
+  font-size: 24px;
+}
+.footer_std {
+  font-family: "cursive";
+  font-size: 16px;
+  padding-bottom: 2px
+}
+
+
+
+/*パソコン*/
+@media all and (max-width: 1000px) {
+  /*非表示*/
+
+  /*表示*/
+
+
+
+/*タブレット*/
+@media all and (max-width: 750px) {
+/*非表示*/
+
+/*表示*/
+  /*電話発信*/
+  a[href^="tel:"]{
+    pointer-events: none;
+  }
+
+
+
+/*スマートフォン*/
+@media all and (max-width: 670px) {
+/*非表示*/
+  .header-tag {
+    display: none;
+  }
+  .Prodact-tag {
+    display: none;
+  }
+  .sns-tag {
+    display: none;
+  }
+
+  .performance {
+    font-size: 18px;
+  }
+
+/*表示*/
+  header { /*高さ調整*/
+    height: 48px;
+  }
+  .content { /*main photo　header高さ調整と連動*/
+    padding: 48px 0 0 0 /*main photo position*/
+  }
+  .header-left { /*文字サイズ・隙間の調整*/
+    font-size: 32px;
+    padding: 8px 0 0 15px;
+  }
+  #nav-open { /*メニューアイコン位置調整*/
+    margin: -4px;
+  }
+
+  /*電話発信*/
+  a[href^="tel:"]{
+    pointer-events: none;
+  }
+
+
+
+#nav-drawer {
+  display: block;
+}
