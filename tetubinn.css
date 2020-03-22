@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+a {
+  text-decoration: none;/*テキストの装飾を指定するプロパティ*/
+  color: inherit;/*親要素の継承、文字の青色設定を解除*/
+}
+ul {
+  list-style: none;/*箇条書きの点を消す*/
+}
+
+p {
+  color: inherit;/*青くなるのを解除*/
+}
+
+.container {
+  display: block;
+  width: 750px;
+  height: 100%;
+  margin:0 auto
+}
+
+h2 {
+  vertical-align: baseline;
+  line-height: 1.4em;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: gray;
+  /*background: transparent;/*背景透明に*/
+  border-left: solid 5px red;/*左線*/
+}
+
+
+
+.performance {
+  display: inline-block;
+  width:100%;
+  color: black;
+  margin: -10px 15px 0 0;
+  font-family: "HGP行書体";
+  font-size: 32px;
+  text-align: center;
+  padding: 30px 0 10px 0;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+.unit-content {
+  position: relative;
+  width: 48%;
+  /*text-align: center;*/
+  padding: 2px 2px;
+}
+.font {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  color: white;
+  font-size: 24px;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+
+
+h4 {
+  font-size: 24px;
+  margin: 0;
+  padding-top: 5px;
+}
+h5 {
+  font-size: 16px;
+  margin: 0;
+}
+.detail {
+  font-size: 12px;
+  font-family: "Hiragino Kaku Gothic ProN";
+  margin: 0;
+}

@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+
+a {
+  text-decoration: none;
+}
+
+.visuallyhidden {
+  position:absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: dimgray;
+  position :fixed;
+  top: 0;
+  z-index: 10;
+  float: left;
+}
+
+.header-logo {
+  float: left;
+  color: white;
+  font-size: 24px;
+  font-family: 'cursive';
+  padding: 15px 30px 15px 30px
+}
+
+.header-logo p {
+  font-family: 'cursive';
+}
+
+.header-tag {
+  float: left;
+  padding: 20px 10px
+}
+
+.header-tag a {
+  float: left;
+  padding: 0px 10px
+}
+
+
+main {
+  background-color: white;
+  margin : 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh
+}
+
+
+
+footer {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: gray
+}
+
+footer div {
+  display: inline-block;
+  align-items: center;
+}
+
+footer ul {
+  list-style: none;
+  align-items: center;
+}
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+
+.flex {
+  align-items: center;
+}
+
+
+
+
+@media all and (max-width: 1000px) {
+  .lesson {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  .lesson-wrapper {
+    height: 990px;
+  }
+
+
+}
+
+@media all and (max-width: 750px) {
+  .top-wrapper h1 {
+    font-size: 32px;
+  }
+
+  .heading h2 {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .header-right {
+    display: none;
+  }
