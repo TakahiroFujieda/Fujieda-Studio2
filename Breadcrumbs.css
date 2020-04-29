@@ -1,3 +1,11 @@
+.breadcrumb {
+  margin: 50px 0 0 0;
+  padding: 0.5em;
+  list-style: none;
+  background: #555;
+  overflow: hidden;
+}
+
 .breadcrumb li {
   display: inline;/*横に並ぶように*/
   list-style: none;
@@ -39,13 +47,7 @@
   /*非表示*/
 
   /*表示*/
-  .breadcrumb {
-    margin: 50px 0 0 0;
-    padding: 0.5em;
-    list-style: none;
-    background: #555;
-    overflow: hidden;
-  }
+
 
 
 /*** タブレット ***/
