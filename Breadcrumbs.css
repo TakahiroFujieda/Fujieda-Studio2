@@ -1,11 +1,3 @@
-.breadcrumb {
-  margin: 50px 0 0 0;
-  padding: 0.5em;
-  list-style: none;
-  background: #555;
-  overflow: hidden;
-}
-
 .breadcrumb li {
   display: inline;/*横に並ぶように*/
   list-style: none;
@@ -37,4 +29,42 @@
 
 .breadcrumb li a:hover {
   text-decoration: underline;
+}
+
+
+
+/*****************************************************************************/
+/*** パソコン ***/
+@media all and (max-width: 1000px) {
+  /*非表示*/
+
+  /*表示*/
+  .breadcrumb {
+    margin: 50px 0 0 0;
+    padding: 0.5em;
+    list-style: none;
+    background: #555;
+    overflow: hidden;
+  }
+
+
+/*** タブレット ***/
+@media all and (max-width: 750px) {
+/*非表示*/
+
+/*表示*/
+
+
+
+/*** スマートフォン ***/
+@media all and (max-width: 670px) {
+/*非表示*/
+
+/*表示*/
+.breadcrumb {
+  margin: 0px 0 0 0;
+  padding: 0.5em;
+  list-style: none;
+  background: #555;
+  overflow: hidden;
 }
