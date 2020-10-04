@@ -1,0 +1,392 @@
+/******************************************************************************/
+/* total setting */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+a {
+  text-decoration: none;/*テキストの装飾を指定するプロパティ*/
+  color: inherit;/*親要素の継承、文字の青色設定を解除*/
+}
+ul {
+  list-style: none;/*箇条書きの点を消す*/
+}
+
+p {
+  color: inherit;/*青くなるのを解除*/
+}
+
+
+
+/******************************************************************************/
+/* main */
+main {
+  background-color: lightgray;
+  margin : 0;
+  padding: 70px 0 0 0;
+}
+
+/*非表示　h1　Common*/
+.visuallyhidden {
+  position:absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+/*Common*/
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+
+
+/*****************************************************************************/
+/***** header *****/
+/*Common*/
+header {
+  height: 120px;
+  width: 100%;
+  background-color: dimgray;
+  position :fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+  color: white;
+  font-family: "HGP行書体";
+  font-size: 36px;
+  padding: 15px 0 0 25px;
+}
+
+.btn2{
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+}
+.btn2::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: white;/*#3367ff*/
+  display: block;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+}
+.btn2:hover::before {
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1)
+}
+
+/***** ▼ Global Navigation ****************************************************/
+/* Main-Menu */
+.header_menu {
+  float: left;
+  color: white;
+  font-family: 'メイリオ', 'Meiryo','ヒラギノ角ゴシック','Hiragino Sans',sans-serif; /*"HGP行書体"*/
+  font-size: 16px;
+}
+.header_menu li {
+  display: inline-block;
+  padding: 0px 5px
+}
+.menu {
+  width: 100%;
+  background-color: dimgray;  ###
+}
+/* Sub-Menu */
+.header_menu ul li ul{
+	position: absolute;
+	top: 95px;
+	left: 290px;
+  padding-top: 9px; /*mainから*/
+}
+.header_menu ul li ul li{
+	display: block;
+}
+.header_menu ul li ul li a{
+	background-color: #efefef;
+	color: #444;
+  padding: 5px 0; /*文字間隔*/
+}
+.header_menu ul li ul li a:hover{
+	background-color: #ddd;
+}
+/* マウスオーバーで表示させる設定 */
+/* display */
+.header_menu ul li ul{
+	display: none;
+}
+.header_menu ul li:hover ul{
+	display: block;
+}*/
+
+
+/***** ▲ Global Navigation * under line ***************************************/
+
+
+/***  ***/
+.menu-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  padding: 20px 20px;
+  display: none;
+}
+
+.sns-tag {
+  float: right;
+  color: white;
+  margin: 0px 15px 0 0;
+  /*font-family: "HGP行書体";*/
+  font-size: 18px;
+  /*text-align: center;*/
+}
+.sns-tag  li {
+  display: inline-block;
+  padding: 0px 5px
+}
+
+
+/*Common*/
+/*https://saruwakakun.com/html-css/reference/nav-drawer*/
+#nav-drawer {
+  position:relative;
+  display: none;
+}
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display: none;
+}
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height:22px;
+  vertical-align: middle;
+  float: right;
+}
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index:99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 75%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 100%;/*最大幅*/
+  height: 75%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+/******************************************************************************/
+/*** footer ***/
+footer {
+  text-align: center;/*有効*/
+  padding-bottom: 20px;
+  background-color: gray
+}
+footer p {
+  text-align:center
+  color: black;
+  font-size: 12px;
+  /*letter-spacing: 10px;/*文字の間隔調整　横方向*/
+  margin: 0 0;
+}
+
+/*** list ***/
+.footer_form { /*親要素*/
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  font-size: 14px; /*項目頭*/
+  border-bottom: solid dimgray; /*下線*/
+  margin: 20px 20px; /*下線*/
+  border-width: thin; /*下線*/
+}
+.footer_list { /*子要素*/
+  padding: 0 15px;
+  font-size: 14px; /*項目*/
+  background-color: gray;
+}
+.footer_list ul {
+  background-color: gray;
+}
+.footer_list li {
+  background-color: gray;
+}
+.item {
+  text-align: left;
+  background-color: gray;
+}
+/*お問い合わせ*/
+.footer_Contact {
+  display: inline-block;
+  align-items: center;
+  padding: 25px 0;
+}
+.footer_Contact p {
+  /*font-size: 14px;*/
+  text-align: start;/*左端寄せ*/
+}
+
+/*** 最下層 ***/
+.footer_name {
+  font-family: "HGP行書体";
+  font-size: 32px; /*会社名*/
+  padding-bottom: 5px
+}
+.footer_tel {
+  font-family: 'cursive';
+  font-size: 24px;
+}
+.footer_std {
+  font-family: "cursive";
+  font-size: 16px;
+  padding-bottom: 2px
+}
+
+
+
+/*****************************************************************************/
+/*** パソコン ***/
+@media all and (max-width: 1000px) {
+  /*非表示*/
+
+  /*表示*/
+
+
+
+/*** タブレット ***/
+@media all and (max-width: 750px) {
+/*非表示*/
+
+/*表示*/
+.container {
+  width: 95%;
+}
+  /*電話発信*/
+  a[href^="tel:"]{
+    pointer-events: none;
+  }
+
+
+
+/*** スマートフォン ***/
+@media all and (max-width: 670px) {
+/*非表示*/
+  .global {
+    display: none;
+  }
+  .global_menu {
+    display: none;
+
+  .Prodact-tag {
+    display: none;
+  }
+  .sns-tag {
+    display: none;
+  }
+  .performance {
+    font-size: 18px;
+  }
+
+
+
+/*表示*/
+  header { /*高さ調整*/
+    height: 48px;
+  }
+  main { /*main photo　header高さ調整と連動*/
+    padding: 48px 0 0 0 /*main photo position*/
+  }
+  .header-left { /*文字サイズ・隙間の調整*/
+    font-size: 32px;
+    padding: 8px 0 0 25px;
+  }
+
+  #nav-open { /*メニューアイコン位置調整*/
+    margin: -4px;
+  }
+  .footer_form { /*親要素*/
+    display: block;
+  }
+  .footer_name {
+    font-family: "HGP行書体";
+    font-size: 32px;
+    padding-bottom: 5px
+  }
+  .footer_tel {
+    font-family: 'cursive';
+    font-size: 18px;
+  }
+  .footer_std {
+    font-family: "cursive";
+    font-size: 16px;
+    padding-bottom: 2px
+  }
+
+  /*電話発信*/
+  a[href^="tel:"]{
+    pointer-events: none;
+  }
+
+
+
+
+
+#nav-drawer {
+  display: block;
+}
